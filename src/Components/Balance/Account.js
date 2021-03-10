@@ -2,6 +2,12 @@ import React from 'react';
 import styles from './Account.module.css';
 
 const Account = () => {
+  const [hide, setHide] = React.useState(false);
+
+  function handleClickButton() {
+    setHide(!hide);
+  }
+
   return (
     <div className={styles.account}>
       <p className={styles.balance}>Saldo Bancário</p>
@@ -37,7 +43,7 @@ const Account = () => {
             />
             <path
               d="M17.625 12C18.2463 12 18.75 11.4963 18.75 10.875C18.75 10.2537 18.2463 9.75 17.625 9.75C17.0037 9.75 16.5 10.2537 16.5 10.875C16.5 11.4963 17.0037 12 17.625 12Z"
-              fill="#622EE5"
+              stroke="#622EE5"
             />
           </svg>
         </button>
@@ -79,7 +85,7 @@ const Account = () => {
             />
           </svg>
         </button>
-        <button>
+        <button className={styles.handleClick} onClick={handleClickButton}>
           <svg
             width="24"
             height="24"
@@ -123,6 +129,13 @@ const Account = () => {
               stroke-linejoin="round"
             />
           </svg>
+          {hide && (
+            <div className={styles.dropdownButton}>
+              <p>Enviar por e-mail</p>
+              <p>Enviar por WhatsApp</p>
+              <p>Enviar por opção 3</p>
+            </div>
+          )}
         </button>
       </div>
     </div>

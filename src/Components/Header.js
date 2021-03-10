@@ -59,6 +59,24 @@ const Header = () => {
     setHide(!hide);
   }
 
+  const ref1 = React.useRef(null);
+  const ref2 = React.useRef(null);
+
+  //para primeira referencia
+  function handleEnterMouse1() {
+    ref1.current.style.display = 'flex';
+  }
+  function handleLeaveMouse1() {
+    ref1.current.style.display = 'none';
+  }
+  //para segunda referencia
+  function handleEnterMouse2() {
+    ref2.current.style.display = 'flex';
+  }
+  function handleLeaveMouse2() {
+    ref2.current.style.display = 'none';
+  }
+
   return (
     <header className={styles.header}>
       <div className={styles.leftContent}>
@@ -92,8 +110,68 @@ const Header = () => {
               </span>
             </p>
             <p className={styles.userAccount}>
-              Ag. 00005-1 <span className={styles.space} /> C.C.
-              00000000000000000020-1{' '}
+              <p
+                onMouseEnter={handleEnterMouse1}
+                onMouseLeave={handleLeaveMouse1}
+              >
+                Ag. 00005-1
+                <span ref={ref1} className={styles.cloudSpan}>
+                  <div>
+                    <svg
+                      width="16"
+                      height="16"
+                      viewBox="0 0 16 16"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M13.4997 11.4997V2.49963H4.49923"
+                        stroke="#172765"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                      <path
+                        d="M11.4995 4.49969H2.49911V13.4997H11.4995V4.49969Z"
+                        stroke="#172765"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                    </svg>
+                  </div>
+                  <p>Copiar</p>{' '}
+                </span>
+              </p>
+              <p
+                onMouseEnter={handleEnterMouse2}
+                onMouseLeave={handleLeaveMouse2}
+              >
+                C.C. 00000000000000000020-1{' '}
+                <span ref={ref2} className={styles.cloudSpan}>
+                  <div>
+                    <svg
+                      width="16"
+                      height="16"
+                      viewBox="0 0 16 16"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M13.4997 11.4997V2.49963H4.49923"
+                        stroke="#172765"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                      <path
+                        d="M11.4995 4.49969H2.49911V13.4997H11.4995V4.49969Z"
+                        stroke="#172765"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                    </svg>
+                  </div>
+                  <p>Copiar</p>{' '}
+                </span>
+              </p>
             </p>
           </div>
           <div className={styles.currentMoney}>

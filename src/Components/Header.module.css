@@ -54,11 +54,43 @@
   width: 16px;
   align-items: flex-end;
   height: 16px;
+  z-index: 1;
   background: var(--color-primary);
 }
 
 .userAccount {
+  display: inline-flex;
   font-size: 12px;
+}
+
+.userAccount {
+  position: relative;
+}
+
+.cloudSpan {
+  align-items: center;
+  flex-flow: row nowrap;
+  column-gap: 5px;
+  cursor: pointer;
+  display: none;
+  padding: 4px 8px;
+  border-radius: 5px;
+  position: absolute;
+  background: #ffffff;
+  width: 76px;
+  height: 28px;
+  z-index: 10;
+  filter: drop-shadow(0px 2px 8px rgba(0, 0, 0, 0.15));
+  border-bottom-width: 12px;
+  transition: all 0.2s;
+}
+
+.cloudSpan:active {
+  transform: translate3d(0, 2px, 0);
+}
+
+.userAccount p + p {
+  margin-left: 15px;
 }
 
 .currentMoney p:first-child {

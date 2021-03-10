@@ -8,12 +8,11 @@ const UpdateBalance = () => {
   const minutes = (dt.getMinutes() < 10 ? '0' : '') + dt.getMinutes();
   const [ahour, setHour] = React.useState('16');
   const [amin, setMin] = React.useState('48');
-  const ref = React.useRef(null);
 
-  function handleTimer() {
+  function handleTimer({ target }) {
+    target.style.animation = 'spinner 0.5s linear';
     setHour(hour);
     setMin(minutes);
-    ref.current.style.animation = 'spinner 1.2s normal';
   }
 
   function handleHideMoney() {
@@ -35,10 +34,9 @@ const UpdateBalance = () => {
           Saldo atualizado às {ahour}:{amin}
         </p>
         <span
-          ref={ref}
+          onAnimationEnd={({ target }) => (target.style.animation = 'none')}
           onClick={handleTimer}
           className="spinner"
-          style={{ fontSize: '16px' }}
         >
           <div className="head"></div>
         </span>

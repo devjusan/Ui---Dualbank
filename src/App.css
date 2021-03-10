@@ -56,6 +56,9 @@ nav ul {
   margin-left: 15px;
 }
 
+.spinner:active {
+}
+
 .head {
   position: absolute;
   left: -5px;
@@ -68,14 +71,7 @@ nav ul {
   transform: rotate(-160deg);
 }
 @keyframes spinner {
-  0% {
-    transform: rotate(360deg);
-  }
-  99% {
-    transform: rotate(-360deg);
-  }
-
-  100% {
+  to {
     transform: rotate(-360deg);
   }
 }
