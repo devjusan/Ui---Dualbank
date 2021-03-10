@@ -1,0 +1,40 @@
+.account {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: flex-start;
+  align-items: center;
+}
+/* Estilizar "Saldo Bancário"*/
+.balance {
+  font-weight: 600;
+  font-size: 20px;
+  font-family: var(--font-two);
+  line-height: 23px;
+  color: #172765;
+  margin-left: 2px;
+}
+
+.balanceComponents {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  column-gap: 1rem;
+  padding: 12px 28px;
+  align-items: center;
+}
+
+/* estilo nos botões */
+.balanceComponents button {
+  border: 1px solid var(--color-primary);
+  border-radius: 5px;
+  width: 80px;
+  height: 40px;
+  transition: all 2s ease;
+}
+
+.balanceComponents button:hover,
+.balanceComponents button:hover svg path {
+  fill: white;
+  color: white;
+  background: linear-gradient(89.96deg, #622ee5 0.06%, #172765 99.94%);
+}

@@ -1,0 +1,174 @@
+/* sem versão mobile */
+.header {
+  max-width: 100%;
+  height: 71px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-flow: row wrap;
+}
+/* logo e dados do usuário*/
+
+.leftContent {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+}
+
+.user {
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  width: 130px;
+  height: 13px;
+  margin-left: 13px;
+}
+
+.logo svg {
+  max-width: 100%;
+  height: auto;
+}
+
+.userData {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: flex-start;
+  max-width: 261px;
+  color: var(--color-primary);
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 19.5px;
+  margin: 0 20px;
+}
+
+.space {
+  margin-left: 14px;
+}
+
+.userAnotherInformations {
+  position: relative;
+  cursor: pointer;
+  display: inline-block;
+  width: 16px;
+  align-items: flex-end;
+  height: 16px;
+  background: var(--color-primary);
+}
+
+.userAccount {
+  font-size: 12px;
+}
+
+.currentMoney p:first-child {
+  font-size: 12px;
+  margin-bottom: 2px;
+  line-height: 14.4px;
+  color: var(--color-secundary);
+  vertical-align: bottom;
+}
+
+.money {
+  display: block;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 19.2px;
+  color: #69d531;
+  transition: all 0.2s ease-in-out;
+}
+
+.hideMoney {
+  cursor: pointer;
+  margin-left: 11.67px;
+}
+
+.hr {
+  margin-left: 6.5px;
+  width: 1px;
+  height: 25px;
+  background: #e5e4e2;
+}
+
+/* área à direita. input search, svgs...*/
+.nav {
+  margin-right: 20px;
+}
+.navDivUl {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.inputText input {
+  max-width: 160px;
+  height: 30px;
+  border-radius: 5px;
+  padding: 6px 12px 8px 16px;
+  border: 0.5px solid #778899;
+}
+
+.inputText {
+  position: relative;
+}
+
+.inputText img {
+  position: absolute;
+  right: 10.5px;
+  pointer-events: none;
+  top: 25%;
+}
+
+.inputText input::placeholder {
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+}
+
+.userOptionsDiv {
+  display: flex;
+  gap: 16px;
+}
+
+/* userAnotherInformations div */
+.userAIDiv {
+  position: absolute;
+  min-width: 100%;
+  height: 235px;
+  right: 0px;
+  top: 19px;
+  overflow-y: scroll;
+  background: #ffffff;
+  /* Dropdown Drop shadow */
+  box-shadow: 0px 2px 20px rgba(44, 74, 125, 0.217548);
+  border-radius: 5px;
+  animation: userAnime 0.5s ease;
+}
+
+.userAIContent {
+  display: flex;
+  white-space: nowrap;
+  padding: 12px;
+  flex-flow: column nowrap;
+}
+
+@keyframes userAnime {
+  to {
+    opacity: 1;
+  }
+  from {
+    opacity: 0;
+  }
+}
+
+.userAIAccount {
+  font-size: 14px;
+  line-height: 20px;
+  color: var(--color-secundary);
+}
+
+.userAIP {
+  display: flex;
+  column-gap: 15px;
+  font-size: 10px;
+  line-height: 12px;
+  color: var(--color-primary);
+}
