@@ -3,18 +3,22 @@ import styles from './UpdateBalance.module.css';
 
 const UpdateBalance = () => {
   const [hide, setHide] = React.useState(false);
+
   const dt = new Date();
   const hour = (dt.getHours() < 10 ? '0' : '') + dt.getHours();
   const minutes = (dt.getMinutes() < 10 ? '0' : '') + dt.getMinutes();
-  const [ahour, setHour] = React.useState('16');
-  const [amin, setMin] = React.useState('48');
+  const [ahour, setHour] = React.useState(hour);
+  const [amin, setMin] = React.useState(minutes);
+  const ref = React.useRef(null);
 
-  function handleTimer({ target }) {
-    target.style.animation = 'spinner 0.5s linear';
+  // atualiza o horário do saldo
+  function handleTimer() {
+    ref.current.style.animation = 'spinner 0.5s linear';
     setHour(hour);
     setMin(minutes);
   }
 
+  // Esconde o elemento p Saldo disponível e o valor (R$100.000.000,00).
   function handleHideMoney() {
     setHide(!hide);
     const line = document.querySelectorAll('#hide');
@@ -34,6 +38,7 @@ const UpdateBalance = () => {
           Saldo atualizado às {ahour}:{amin}
         </p>
         <span
+          ref={ref}
           onAnimationEnd={({ target }) => (target.style.animation = 'none')}
           onClick={handleTimer}
           className="spinner"
