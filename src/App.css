@@ -70,8 +70,8 @@ nav ul {
 }
 
 .react-datepicker.callendar {
-  width: 330px !important;
-  height: 369px !important;
+  width: 300px !important;
+  height: 339px !important;
   background: #ffffff !important;
   box-shadow: 0px 2px 20px rgba(44, 74, 125, 0.217548) !important;
   border-radius: 5px !important;
@@ -81,7 +81,7 @@ nav ul {
   display: inline-block !important;
   position: absolute !important;
   top: 0 !important;
-  right: -11rem !important;
+  right: -15rem !important;
   animation: animation 0.3s ease-out !important;
 }
 
@@ -180,7 +180,7 @@ nav ul {
 .react-datepicker__current-month {
   display: flex;
 
-  font-size: 20px !important;
+  font-size: 18px !important;
   line-height: 19px !important;
   color: #172765 !important;
   font-weight: 500 !important;
@@ -191,6 +191,7 @@ nav ul {
   display: inline-flex !important;
   width: 24px;
   height: 24px;
+  margin-left: 8rem;
   cursor: pointer;
   background: url('./Assets/input-enter.svg') center no-repeat;
   border: none;
