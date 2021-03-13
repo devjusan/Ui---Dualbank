@@ -58,6 +58,7 @@
   height: 40px;
   background: none;
   transition: all 0.3s ease-in-out;
+  outline: none;
 }
 
 .balanceComponents button:hover {

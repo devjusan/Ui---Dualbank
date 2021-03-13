@@ -1,5 +1,6 @@
 /* sem versão mobile */
 .header {
+  position: relative;
   max-width: 100%;
   height: 71px;
   display: flex;
@@ -103,7 +104,7 @@
 
 .money {
   display: block;
-  font-weight: 600;
+  font-weight: 500;
   font-size: 16px;
   line-height: 19.2px;
   color: #69d531;
@@ -127,8 +128,11 @@
   margin-right: 20px;
 }
 .navDivUl {
+  position: absolute;
   display: flex;
   align-items: center;
+  top: 12.5%;
+  right: 1rem;
   gap: 16px;
 }
 
@@ -203,4 +207,39 @@
   font-size: 10px;
   line-height: 12px;
   color: var(--color-primary);
+}
+
+/* DIV ESCONDIDA */
+.hideDiv {
+  position: fixed;
+  padding: 12px;
+  width: 344px;
+  height: 48px;
+  left: 35%;
+  top: 5rem;
+  z-index: 150;
+  background: #e5e4e2;
+  border: 1px solid #778899;
+  box-sizing: border-box;
+  border-radius: 5px;
+}
+
+.hideDiv {
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 16px;
+  display: flex;
+  align-items: center;
+  color: #778899;
+  animation: animeHideDiv 0.3s ease-in-out;
+}
+
+@keyframes animeHideDiv {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
 }

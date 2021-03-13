@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import styles from './Header.module.css';
 import logo from '../Assets/logo.svg';
 import search from '../Assets/search.svg';
@@ -7,8 +7,26 @@ import chat from '../Assets/chat.svg';
 import callendar from '../Assets/callendar.svg';
 import user from '../Assets/user.svg';
 import HideNumber from './CustomComponents/HideNumber';
+import Items from './Items';
 
 const Header = () => {
+  const [hideDiv, setHideDiv] = React.useState(false);
+  const [hideDiv2, setHideDiv2] = React.useState(false);
+
+  function isCopied() {
+    setHideDiv(true);
+    setTimeout(() => {
+      setHideDiv(false);
+    }, 3000);
+  }
+
+  function isCopied2() {
+    setHideDiv2(true);
+    setTimeout(() => {
+      setHideDiv2(false);
+    }, 3000);
+  }
+
   const data = [
     {
       account: 'Conta Corrente',
@@ -115,7 +133,11 @@ const Header = () => {
                 onMouseLeave={handleLeaveMouse1}
               >
                 Ag. 00005-1
-                <span ref={ref1} className={styles.cloudSpan}>
+                <span
+                  onClick={isCopied}
+                  ref={ref1}
+                  className={styles.cloudSpan}
+                >
                   <div>
                     <svg
                       width="16"
@@ -141,12 +163,21 @@ const Header = () => {
                   <p>Copiar</p>{' '}
                 </span>
               </p>
+              {hideDiv && (
+                <div className={styles.hideDiv}>
+                  <p>Número da agência copiado.</p>
+                </div>
+              )}
               <p
                 onMouseEnter={handleEnterMouse2}
                 onMouseLeave={handleLeaveMouse2}
               >
                 C.C. 00000000000000000020-1{' '}
-                <span ref={ref2} className={styles.cloudSpan}>
+                <span
+                  onClick={isCopied2}
+                  ref={ref2}
+                  className={styles.cloudSpan}
+                >
                   <div>
                     <svg
                       width="16"
@@ -172,6 +203,11 @@ const Header = () => {
                   <p>Copiar</p>{' '}
                 </span>
               </p>
+              {hideDiv2 && (
+                <div className={styles.hideDiv}>
+                  <p>Número da conta copiado.</p>
+                </div>
+              )}
             </p>
           </div>
           <div className={styles.currentMoney}>
@@ -207,6 +243,9 @@ const Header = () => {
           </li>
         </ul>
       </nav>
+      <div>
+        <Items />
+      </div>
     </header>
   );
 };
